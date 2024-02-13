@@ -6,6 +6,7 @@ class welcome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
           decoration: BoxDecoration(
@@ -17,20 +18,23 @@ class welcome extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  height: 10,
+                  height: size.height*0.01,
                 ),
                 Column(children: [ 
                   Image.asset('assets/images/image.png'),
                 Text(
                   'Fast Pass',
-                  style: TextStyle(fontSize: 50),
+                  style: TextStyle(fontSize: size.height*0.08),
                 ),
                 ],),
                 
-                ElevatedButton(
+                Container(
+                  height: size.height*0.06,
+                  width: size.width*0.5,
+                  child:ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black.withOpacity(0.8),
-                      padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+                     
                     ),
                     onPressed: () {
                       Navigator.pushNamed(context, '/login');
@@ -38,7 +42,9 @@ class welcome extends StatelessWidget {
                     child: Text(
                       'Junte-se a nós',
                       style: TextStyle(color: Colors.white, fontSize: 15),
-                    )),
+                    )), 
+                )
+                
               ],
             ),
           )),
