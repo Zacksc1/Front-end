@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ppo/componentes/gradient.dart';
+
 
 class welcome extends StatelessWidget {
   welcome({super.key});
@@ -10,7 +10,7 @@ class welcome extends StatelessWidget {
     return Scaffold(
       body: Container(
           decoration: BoxDecoration(
-            gradient: allColor(),
+            color: Color(0xff0ABFBC),
           ),
           child: Padding(
             padding: EdgeInsets.all(30),
@@ -18,33 +18,76 @@ class welcome extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  height: size.height*0.01,
+                  height: size.height * 0.01,
                 ),
-                Column(children: [ 
-                  Image.asset('assets/images/image.png'),
-                Text(
-                  'Fast Pass',
-                  style: TextStyle(fontSize: size.height*0.08),
-                ),
-                ],),
-                
-                Container(
-                  height: size.height*0.06,
-                  width: size.width*0.5,
-                  child:ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black.withOpacity(0.8),
-                     
+                Column(
+                  children: [
+                    Container(
+                      width: size.width*0.7,
+                      height: size.height*0.4,
+                      child:Image.asset('assets/images/onibus.png'),
                     ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    },
-                    child: Text(
-                      'Junte-se a nós',
-                      style: TextStyle(color: Colors.white, fontSize: 15),
-                    )), 
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Fast',
+                          style: TextStyle(fontSize: size.height * 0.08),
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(
+                          'Pass',
+                          style: TextStyle(
+                              fontSize: size.height * 0.08,
+                              color: Color(0xffFC354C)),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                Container(
+                  height: size.height * 0.18,
+                  width: size.width * 1,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        height: size.height * 0.07,
+                        width: size.width * 0.5,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xffFC354C),
+                            ),
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/login');
+                            },
+                            child: Text(
+                              'Login',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20,),
+                            )),
+                      ),
+                      Container(
+                        height: size.height * 0.07,
+                        width: size.width * 0.5,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xffFC354C),
+                            ),
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/register');
+                            },
+                            child: Text(
+                              'Cadastre-se',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            )),
+                      )
+                    ],
+                  ),
                 )
-                
               ],
             ),
           )),

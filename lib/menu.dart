@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ppo/componentes/formStyle.dart';
 import 'package:ppo/componentes/gradient.dart';
 
+
 class menu extends StatefulWidget {
   const menu({super.key});
 
@@ -20,23 +21,33 @@ class _menuState extends State<menu> {
         home: Scaffold(
             body: Container(
       decoration: BoxDecoration(
-        gradient: allColor(),
+        color: Color(0xff0ABFBC),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
               width: size.width,
-              height: size.height * 0.5,
+              height: size.height * 0.50,
               decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.4),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.4), // Cor da sombra
+                      spreadRadius: 1, // Expansão da sombra
+                      blurRadius: 8, // Desfoque da sombra
+                      offset: Offset(4, 4), // Deslocamento da sombra
+                    ),
+                  ],
+                  color: Color(0xffFC354C),
                   borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(90),
-                      bottomRight: Radius.circular(90))),
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10))),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(height: size.height*0.01,),
+                  SizedBox(
+                    height: size.height * 0.01,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -70,14 +81,24 @@ class _menuState extends State<menu> {
                           icon: Icon(Icons.menu))
                     ],
                   ),
-                  SizedBox(height: size.height*0.01,),
+                  SizedBox(
+                    height: size.height * 0.01,
+                  ),
                   Container(
                     width: size.width * 0.9,
                     height: size.height * 0.2,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white.withOpacity(0.5),
-                    ),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color:
+                                Colors.black.withOpacity(0.4), // Cor da sombra
+                            spreadRadius: 1, // Expansão da sombra
+                            blurRadius: 8, // Desfoque da sombra
+                            offset: Offset(4, 4), // Deslocamento da sombra
+                          ),
+                        ],
+                        color: Colors.white),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -99,28 +120,33 @@ class _menuState extends State<menu> {
                     ),
                   ),
                   SizedBox(
-                    height: size.height*0.16,
+                    height: size.height * 0.16,
                   )
                 ],
               )),
-
+          SizedBox(
+            height: size.height * 0.01,
+          ),
           Container(
-              height: 275,
-              width: size.width*0.8,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  formMenuBottons(
-                      'Realizar recarga', size.width, '/recarga', context),
-                  formMenuBottons(
-                      'Bloquear passe', size.width, '/block_pass', context),
-                  formMenuBottons(
-                      'Novo passe', size.width, '/menu', context),
-                ],
-              ),
+            height: size.height * 0.45,
+            width: size.width * 0.8,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                formNFC('Pagamento por NFC', size, '/nfc', context,
+                    AssetImage('assets/images/nfc.png')),
+                formMenuBottons('Realizar recarga', size, '/recarga', context,
+                    AssetImage('assets/images/dinheiro.png')),
+                formMenuBottons('Bloquear passe', size, '/block_pass', context,
+                    AssetImage('assets/images/block4.png')),
+                formMenuBottons('Novo passe', size, '/newPass', context,
+                    AssetImage('assets/images/carteira.png')),
+              ],
             ),
-            SizedBox(height: size.height*0.01,)
-            
+          ),
+          SizedBox(
+            height: size.height * 0.01,
+          )
         ],
       ),
     )));

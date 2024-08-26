@@ -43,21 +43,18 @@ class profile extends StatelessWidget {
                   ],
                 ),
               ),
-
               Stack(
                 children: [
                   CircleAvatar(
-                     radius: 150,
-                     backgroundColor: Colors.grey[200],
-
-                    child:CircleAvatar(
-                radius: 140,
-                backgroundImage: AssetImage('assets/images/eu.jpg'),
-              ),
+                    radius: 150,
+                    backgroundColor:Color(0xffFC354C),
+                    child: CircleAvatar(
+                      radius: 140,
+                      backgroundImage: AssetImage('assets/images/eu.jpg'),
+                    ),
                   )
                 ],
               ),
-              
               SizedBox(
                 height: 50,
               ),
@@ -69,14 +66,14 @@ class profile extends StatelessWidget {
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             topRight: Radius.circular(10)),
-                        color: Colors.white.withOpacity(0.2),
+                        color:Color(0xffFC354C),
                       ),
                       child: Column(children: [
                         dataProfile('Nome:'),
-                        dataProfile('DataNasc'),
-                        dataProfile('Cadastro'),
-                        dataProfile('Email'),
-                        dataProfile('Validade do passe'),
+                        dataProfile('DataNasc:'),
+                        dataProfile('Cadastro:'),
+                        dataProfile('Email:'),
+                        dataProfile('Validade do passe:'),
                       ]))),
             ],
           ),

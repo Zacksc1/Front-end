@@ -28,10 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+
+  flutter_nfc_kit: ^3.5.2
   flutter:
     sdk: flutter
-
+  nfc_manager: ^3.4.0
   image_picker: ^0.8.4+4
+   
     
 
 
@@ -74,6 +77,27 @@ flutter:
     - assets\images\visto.png
     - assets\images\cross.png
     - assets\images\qrcode.jpg
+    - assets\images\dinheiro.png
+    - assets\images\carteira.png
+    - assets\images\block.png
+    - assets\images\onibus.png
+    - assets\images\nfc.png
+    - assets\images\block2.png
+    - assets\images\block3.png
+    - assets\images\block4.png
+    - assets\images\nfc2.png
+    - assets\images\nfc3.png
+    - assets\images\contactless.png
+    - assets\images\carregando.png
+    - assets\images\check.png
+    - assets\images\aviso.png
+    
+    
+
+
+
+
+
 
 
 

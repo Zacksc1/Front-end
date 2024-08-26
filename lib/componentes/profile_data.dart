@@ -6,7 +6,10 @@ ListTile dataProfile(
   return ListTile(
     title: Text(
       dados,
-      style: TextStyle(color: Colors.black,fontSize: 20,),
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+      ),
     ),
   );
 }
@@ -17,7 +20,7 @@ ListTile dataProfile2(
   return ListTile(
     title: Text(
       dados,
-      style: TextStyle(color: Colors.black,fontSize: 20),
+      style: TextStyle(color: Colors.black, fontSize: 20),
     ),
   );
 }

@@ -16,6 +16,10 @@ import 'package:ppo/register.dart';
 import 'package:ppo/taxa.dart';
 import 'package:ppo/transaction.dart';
 import 'package:ppo/welcome.dart';
+import 'package:ppo/nfc.dart';
+import 'package:ppo/nfcR.dart';
+import 'package:ppo/nfcCheck.dart';
+import 'package:ppo/nfcError.dart';
 
 
 
@@ -39,5 +43,13 @@ import 'package:ppo/welcome.dart';
     '/escolha':(context)=>escolha(),
     '/LoginR': (context) => login(),
     '/newPassword':(context)=>newPassword(),
+    '/nfc':(context)=>nfc(),
+    '/nfcR':(context)=>nfcR(),
+    '/nfcCheck':(context)=>nfcCheck(),
+    '/nfcError':(context)=>nfcError(),
+
+
+
+
   };
 }

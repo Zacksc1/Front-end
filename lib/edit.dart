@@ -29,6 +29,7 @@ class _editState extends State<edit> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -47,11 +48,11 @@ class _editState extends State<edit> {
                         child: Icon(
                           Icons.arrow_back_sharp,
                           size: 30,
-                          color: Colors.white,
+                          color: Colors.black,
                         )),
                     Text(
                       'Edit',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(fontSize: 20, color: Colors.black),
                       textAlign: TextAlign.center,
                     ),
                     Padding(
@@ -62,7 +63,7 @@ class _editState extends State<edit> {
                         },
                         child: Icon(
                           Icons.home,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                     )
@@ -73,7 +74,7 @@ class _editState extends State<edit> {
                 children: [
                   CircleAvatar(
                     radius: 150,
-                    backgroundColor: Colors.grey[200],
+                    backgroundColor: Color(0xffFC354C),
                     child: CircleAvatar(
                       radius: 140,
                       backgroundImage:
@@ -141,43 +142,51 @@ class _editState extends State<edit> {
               Expanded(
                   child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10)),
                         color: Colors.white.withOpacity(0.2),
                       ),
-                      child: Column(children: [
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
                         dataProfile2('Nome:'),
-                        dataProfile2('DataNasc'),
-                        dataProfile2('Email'),
-                        SizedBox(
-                          height: 20,
-                        ),
+                        dataProfile2('DataNasc:'),
+                        dataProfile2('Email:'),
+
+                        
                         Container(
-                          width: 200,
-                          height: 50,
+                          child: Column(
+                            children: [
+                              Container(
+                          width: size.width*0.50,
+                          height: size.height*0.07,
                           child: ElevatedButton(
                               style: editBottonsStyle(Colors.green),
                               onPressed: () {},
                               child: Text(
                                 'Confirmar',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: Colors.white,fontSize: 18),
                               )),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Container(
-                          height: 50,
-                          width: 200,
+                          width: size.width*0.50,
+                          height: size.height*0.07,
                           child: ElevatedButton(
                               style: editBottonsStyle(Colors.red),
-                              onPressed: () {},
+                              onPressed: () {
+            
+                              },
                               child: Text(
                                 'Cancelar',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: Colors.white,fontSize: 18),
                               )),
                         )
+
+                            ],
+                          ),
+                        )
+                        
                       ]))),
             ],
           ),

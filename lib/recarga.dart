@@ -30,7 +30,7 @@ class _RecargaState extends State<Recarga> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.black.withOpacity(0.4),
+                  color: Color(0xffFC354C),
                 ),
                 width: size.width,
                 height: 100,
@@ -84,7 +84,16 @@ class _RecargaState extends State<Recarga> {
                     width: size.width,
                     height: 130,
                     decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.5),
+                        boxShadow: [
+                          BoxShadow(
+                            color:
+                                Colors.black.withOpacity(0.4), // Cor da sombra
+                            spreadRadius: 1, // Expansão da sombra
+                            blurRadius: 8, // Desfoque da sombra
+                            offset: Offset(4, 4), // Deslocamento da sombra
+                          ),
+                        ],
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(20)),
                     child: Padding(
                         padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
@@ -97,8 +106,6 @@ class _RecargaState extends State<Recarga> {
                           textAlign: TextAlign.start,
                         ))),
               ),
-
-              
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -110,6 +117,17 @@ class _RecargaState extends State<Recarga> {
                         textAlign: TextAlign.center,
                       ),
                       Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black
+                                  .withOpacity(0.1), // Cor da sombra
+                              spreadRadius: 0.1, // Expansão da sombra
+                              blurRadius: 8, // Desfoque da sombra
+                              offset: Offset(2, 2), // Deslocamento da sombra
+                            ),
+                          ],
+                        ),
                         width: 300,
                         height: 50,
                         child: Padding(
@@ -121,7 +139,7 @@ class _RecargaState extends State<Recarga> {
                             ],
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-                              fillColor: Colors.white.withOpacity(0.4),
+                              fillColor: Colors.white,
                               filled: true,
                               hintText: 'RS',
                               border: OutlineInputBorder(
@@ -135,17 +153,35 @@ class _RecargaState extends State<Recarga> {
                   ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 320, 0, 0),
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color:
+                                Colors.black.withOpacity(0.4), // Cor da sombra
+                            spreadRadius: 1, // Expansão da sombra
+                            blurRadius: 8, // Desfoque da sombra
+                            offset: Offset(4, 4), // Deslocamento da sombra
+                          ),
+                        ],
+                      ),
+                      width: size.width * 0.5,
+                      height: size.height * 0.08,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)),
                             backgroundColor: Colors.green,
-                            padding: EdgeInsets.fromLTRB(60, 15, 60, 15)),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/qrCode');
-                        },
-                        child: Text(
-                          'Confirmar',
-                          style: TextStyle(color: Colors.white),
-                        )),
+                          ),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/qrCode');
+                          },
+                          child: Text(
+                            'Confirmar',
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          )),
+                    ),
                   )
                 ],
               )
